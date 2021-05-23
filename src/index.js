@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import "Style/main.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import firebase from "firebase";
@@ -14,12 +15,12 @@ firebase.initializeApp({
   messagingSenderId: "594622817813",
   appId: "1:594622817813:web:95a0dc0ecd942226a3101c",
   measurementId: "G-VGY5CE1ZB5"
-  });
+});
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
