@@ -21,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.down("sm")]: {
         width: "100%",
         height: "100%",
+        display: "flex",
+        alignItems: "center",
       },
     },
   },
