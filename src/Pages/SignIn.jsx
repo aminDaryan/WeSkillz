@@ -78,11 +78,14 @@ export default function SignIn() {
                 header="Email address"
                 placeholder="Enter email address"
                 setInput={setEmail}
+                className="mt-5 mb-6"
               />
               <Input
+                type="password"
                 header="Password"
                 placeholder="Enter password"
                 setInput={setPassword}
+                className="mt-5 mb-6"
               />
             </div>
             <div className="flex justify-center items-center mt-2 mb-16 mx-14">

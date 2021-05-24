@@ -6,8 +6,8 @@ export default function NavBar() {
   const history = useHistory();
 
   function handleLogOut() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user-info");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("user-info");
     history.push("/signin");
   }
   

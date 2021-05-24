@@ -6,13 +6,15 @@ import axios from "axios";
 import PropTypes from "prop-types";
 
 export default function PrivateRote({ component: Component, ...rest }) {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   let isAuthenticated = false;
   if (token) {
-    axios.defaults.headers.common.token = token;
+    axios.defaults.headers.common = {
+      Authorization: `bearer ${JSON.parse(token).accessToken}`,
+    };
     isAuthenticated = true;
   }
-  
+
   return (
     <Route
       {...rest}
