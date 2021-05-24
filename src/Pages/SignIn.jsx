@@ -36,6 +36,7 @@ const SignInCard = styled(Card)({
   width: "40rem",
   border: "2px solid rgba(224, 224, 224, 0.5)",
   boxShadow: "none",
+  overflow: "auto",
 });
 
 export default function SignIn() {
