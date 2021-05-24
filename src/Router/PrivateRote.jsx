@@ -6,13 +6,17 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { refreshToken } from "Apis/auth";
 
+// Redux
+import { useSelector } from "react-redux";
+
 export default function PrivateRote({ component: Component, ...rest }) {
-  const token = sessionStorage.getItem("token");
+  const token = useSelector((state) => state.token);
+  const userInfo = useSelector((state) => state.userInfo);
   let isAuthenticated = false;
 
   if (token) {
     axios.defaults.headers.common = {
-      Authorization: `bearer ${JSON.parse(token).accessToken}`,
+      Authorization: `bearer ${token.accessToken}`,
     };
 
     isAuthenticated = true;
@@ -24,9 +28,7 @@ export default function PrivateRote({ component: Component, ...rest }) {
       (error) => {
         if (error.response && error.response.status === 401) {
           const theRefreshToken = JSON.parse(token).refreshToken;
-          const userEmail = JSON.parse(
-            sessionStorage.getItem("user-info")
-          ).email;
+          const userEmail = userInfo.email;
           refreshToken({ email: userEmail, refreshToken: theRefreshToken });
         } else return Promise.reject(error);
       }

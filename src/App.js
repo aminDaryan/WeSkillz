@@ -5,9 +5,13 @@ import Main from "Router/Router";
 import NavBar from "Components/NavBar";
 
 // Utils
-import { Provider } from 'react-redux';
-import store from "Redux/store";
 import { BrowserRouter as Router } from "react-router-dom";
+
+// Redux
+import { Provider } from 'react-redux';
+import { store, persistor } from "Redux/store";
+import { PersistGate } from 'redux-persist/integration/react'
+
 
 // context
 import ContactsContextProvider from "Context/ContactsContext";
@@ -17,10 +21,12 @@ function App() {
     <Router>
       <ContactsContextProvider>
         <Provider store={store}>
-          <div className="relative bg-green-50 bg-opacity-25">
-            <NavBar />
-            <Main />
-          </div>
+          <PersistGate loading={null} persistor={persistor}>
+            <div className="relative bg-green-50 bg-opacity-25">
+              <NavBar />
+              <Main />
+            </div>
+          </PersistGate>
         </Provider>
       </ContactsContextProvider>
     </Router>

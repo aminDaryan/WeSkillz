@@ -1,13 +1,18 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router";
 
+// Redux
+import { useDispatch } from "react-redux";
+import { removeToken, removeUserInfo } from "Redux/actions";
+
 export default function NavBar() {
   const location = useLocation();
   const history = useHistory();
+  const dispatch = useDispatch(null);
 
   function handleLogOut() {
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("user-info");
+    dispatch(removeToken())
+    dispatch(removeUserInfo())
     history.push("/signin");
   }
   
