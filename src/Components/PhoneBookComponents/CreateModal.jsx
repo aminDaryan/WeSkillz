@@ -105,5 +105,5 @@ export default function CreateModal({ handleCloseModal, modalIsOpen }) {
 
 CreateModal.propTypes = {
   handleCloseModal: PropTypes.func.isRequired,
-  modalIsOpen: PropTypes.func.text,
+  modalIsOpen: PropTypes.bool.text,
 };

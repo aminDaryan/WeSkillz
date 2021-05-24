@@ -10,19 +10,19 @@ import store from "Redux/store";
 import { BrowserRouter as Router } from "react-router-dom";
 
 // context
-import DatabaseContextProvider from "Context/DatabaseContext";
+import ContactsContextProvider from "Context/ContactsContext";
 
 function App() {
   return (
     <Router>
-      <DatabaseContextProvider>
+      <ContactsContextProvider>
         <Provider store={store}>
           <div className="relative bg-green-50 bg-opacity-25">
             <NavBar />
             <Main />
           </div>
         </Provider>
-      </DatabaseContextProvider>
+      </ContactsContextProvider>
     </Router>
   );
 }

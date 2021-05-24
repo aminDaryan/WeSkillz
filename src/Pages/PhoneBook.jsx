@@ -5,7 +5,7 @@ import React, { useState } from "react";
 // Components
 import GreenButton from "Components/GreenButton";
 import Table from "Components/PhoneBookComponents/Table/Table";
-import CreateModal from "Components/PhoneBookComponents/CreateModal/CreateModal";
+import CreateModal from "Components/PhoneBookComponents/CreateModal";
 
 export default function PhoneBook() {
   const [modalIsOpen, setModalIsOpen] = useState(false);

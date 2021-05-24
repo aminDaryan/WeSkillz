@@ -20,9 +20,9 @@ firebase.initializeApp({
 const db = firebase.firestore();
 db.settings({ timestampsInSnapShots: true });
 
-export const FirebaseDataBase = createContext(null);
+export const ContactsContext = createContext(null);
 
-export default function DatabaseContextProvider({ children }) {
+export default function ContactsContextProvider({ children }) {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
@@ -42,14 +42,13 @@ export default function DatabaseContextProvider({ children }) {
     });
   }, [db]);
 
-  console.log("contacts: ", contacts);
   return (
-    <FirebaseDataBase.Provider value={contacts}>
+    <ContactsContext.Provider value={contacts}>
       {children}
-    </FirebaseDataBase.Provider>
+    </ContactsContext.Provider>
   );
 }
 
-DatabaseContextProvider.propTypes = {
+ContactsContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };

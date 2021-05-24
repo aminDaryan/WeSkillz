@@ -11,19 +11,24 @@ export default function NavBar() {
     history.push("/signin");
   }
   
+
+  function handleSignIn() {
+    history.push("/signin");
+  }
+  
   return (
-    <nav className="fixed -inset-x-0 top-0 flex justify-between items-center px-20 py-6 bg-white shadow-md z-50">
+    <nav className="fixed -inset-x-0 top-0 flex justify-between items-center px-8 sm:px-20 py-6 bg-white shadow-md z-50">
       <div>
-        <span className="text-5xl font-bold text-green-600">Phonebook</span>
+        <span className="text-3xl sm:text-5xl font-bold text-green-600">Phonebook</span>
       </div>
       <div>
         {location.pathname === "/phone-book" ? (
           <button className="bg-transparent" onClick={handleLogOut}>
-            <span className="text-2xl font-bold text-green-600">Logout</span>
+            <span className="text-xl sm:text-2xl font-bold text-green-600">Logout</span>
           </button>
         ) : (
-          <button className="bg-transparent">
-            <span className="text-2xl font-bold text-green-600">Login</span>
+          <button className="bg-transparent" onClick={handleSignIn}>
+            <span className="text-xl sm:text-2xl font-bold text-green-600">Login</span>
           </button>
         )}
       </div>

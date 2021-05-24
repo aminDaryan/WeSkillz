@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./tableStyle.css";
 
 // context
-import { FirebaseDataBase } from "Context/DatabaseContext";
+import { ContactsContext } from "Context/ContactsContext";
 
 // Utils
 import { Card } from "@material-ui/core";
@@ -39,9 +39,7 @@ const TableCard = styled(Card)({
 
 export default function Table() {
   const classes = useStyles();
-  const contacts = useContext(FirebaseDataBase);
-
-  console.log("contacts: ", contacts);
+  const contacts = useContext(ContactsContext);
 
   return (
     <div className="w-full  text-xl">
@@ -71,7 +69,7 @@ export default function Table() {
                   <td className="text-left text-green-600 text-xl py-3  pl-5  rounded-t-md rounded-l-md">
                     <div className="flex items-center">
                       <div className="rounded-full bg-green-600 w-10 h-10 text-white flex justify-center items-center mr-3 font-bold">
-                        <span>J</span>
+                        <span>{contact.firstName[0]}</span>
                       </div>
                       <div>
                         <span className="text-green-600">
@@ -81,10 +79,10 @@ export default function Table() {
                     </div>
                   </td>
                   <td className="text-left text-green-600 py-3 pl-5">
-                    <span> 0949430943</span>
+                    <span>  {contact.phoneNumber}</span>
                   </td>
                   <td className="text-left text-green-600 py-3 pl-5">
-                    <span>John@gmail.com</span>
+                    <span>{contact.address}</span>
                   </td>
                   <td className="flex text-green-600 py-3 ml-5 text-right  rounded-r-md rounded-b-md">
                     <button className="bg-transparent mr-4">
