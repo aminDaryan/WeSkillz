@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 // Utils
-import firebase from "firebase";
 
 // Components
 import GreenButton from "Components/GreenButton";
@@ -12,7 +11,7 @@ export default function PhoneBook() {
   
   return (
     <div className="p-16 flex">
-      <div className="flex flex-col justify-center items-center w-1/5 mr-10">
+      <div className="flex flex-col items-center w-1/5 mr-10">
         <div className="w-full">
           <GreenButton
             onClickFunction={handleCreateContact}

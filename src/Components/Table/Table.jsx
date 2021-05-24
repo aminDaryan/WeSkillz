@@ -4,8 +4,9 @@ import "./tableStyle.css";
 // Utils
 import { Card } from "@material-ui/core";
 import { styled, makeStyles } from "@material-ui/core/styles";
-import PropTypes from "prop-types";
-import { FirestoreCollection } from "@react-firebase/firestore";
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import EditIcon from '@material-ui/icons/Edit';
+// import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,7 +46,7 @@ export default function Table() {
                   Email address
                 </th>
                 <th className="text-left text-green-600 font-bold text-xl pb-6 pl-5">
-                  Actions
+                
                 </th>
               </tr>
             </thead>
@@ -53,12 +54,6 @@ export default function Table() {
               <div className="text-left text-green-600 opacity-50 font-bold my-6 pl-5">
                 <span>Contacts (11)</span>
               </div>
-              <FirestoreCollection path="/contacts" limit={1}>
-                {(d) => {
-                  console.log("d: ",d)
-                  return d.isLoading ? (
-                    "Loading..."
-                  ) : (
                     <tr>
                       <td className="text-left text-green-600 font-bold text-xl pb-6 pl-5">
                         <div className="flex items-center">
@@ -76,11 +71,11 @@ export default function Table() {
                       <td className="text-left text-green-600 pb-6 pl-5">
                         <span>John@gmail.com</span>
                       </td>
-                      <td className="text-left text-green-600 pb-6 pl-5"></td>
+                      <td className="text-green-600 pb-6 pl-5 text-right">
+                        <EditIcon style={{ color: "rgb(0, 149, 92)",fontSize: 35, marginRight: "1rem" }}/>
+                        <DeleteOutlineIcon style={{ color: "rgb(0, 149, 92)",fontSize: 35 }}/>
+                      </td>
                     </tr>
-                  );
-                }}
-              </FirestoreCollection>
             </tbody>
           </table>
         </TableCard>
@@ -89,6 +84,6 @@ export default function Table() {
   );
 }
 
-Table.propTypes = {
-  users: PropTypes.shapeOf({}).isRequired,
-};
+// Table.propTypes = {
+//   users: PropTypes.shapeOf({}).isRequired,
+// };
