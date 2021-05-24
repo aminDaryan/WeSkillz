@@ -84,7 +84,7 @@ export default function CreateModal({ handleCloseModal, modalIsOpen }) {
               </div>
               <div className="flex flex-col justify-center items-center  text-xl">
                 <Input placeholder="Phone Number" setInput={setPhoneNumber} />
-                <Input placeholder="Address" setInput={setAddress} />
+                <Input placeholder="Email Address" setInput={setAddress} />
               </div>
               <div className="flex justify-center items-center mt-2 mb-5">
                 <GreenButton
