@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./tableStyle.css";
+
+// context
+import { FirebaseDataBase } from "Context/DatabaseContext";
 
 // Utils
 import { Card } from "@material-ui/core";
@@ -36,6 +39,9 @@ const TableCard = styled(Card)({
 
 export default function Table() {
   const classes = useStyles();
+  const contacts = useContext(FirebaseDataBase);
+
+  console.log("contacts: ", contacts);
 
   return (
     <div className="w-full  text-xl">
@@ -58,17 +64,19 @@ export default function Table() {
             </thead>
             <tbody>
               <div className="text-left text-green-600 opacity-50 font-bold my-6 pl-5">
-                <span>Contacts (11)</span>
+                <span>Contacts ({contacts?.length})</span>
               </div>
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                <tr key={i} className="hover:bg-green-50">
+              {contacts?.map((contact) => (
+                <tr key={contact.userId} className="hover:bg-green-50">
                   <td className="text-left text-green-600 text-xl py-3  pl-5  rounded-t-md rounded-l-md">
                     <div className="flex items-center">
                       <div className="rounded-full bg-green-600 w-10 h-10 text-white flex justify-center items-center mr-3 font-bold">
                         <span>J</span>
                       </div>
                       <div>
-                        <span className="text-green-600">John Smith</span>
+                        <span className="text-green-600">
+                          {contact.firstName} {contact.lastName}
+                        </span>
                       </div>
                     </div>
                   </td>
