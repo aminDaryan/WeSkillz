@@ -33,7 +33,7 @@ const TableCard = styled(Card)({
   width: "100%",
   border: "2px solid rgba(224, 224, 224, 0.5)",
   boxShadow: "none",
-  padding: "4rem 2rem",
+  padding: "3rem 2rem",
   overflow: "auto",
 });
 

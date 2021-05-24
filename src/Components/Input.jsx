@@ -22,7 +22,7 @@ export default function Input({
       <input
         id={id}
         type={type || "text"}
-        className="w-full border border-green-600 focus-visible:border-green-600 rounded-md placeholder-green-600 placeholder-opacity-60 py-4 px-5 "
+        className={`w-full border border-green-600 focus-visible:border-green-600 rounded-md placeholder-green-600 placeholder-opacity-60 py-4 px-5 ${header ? "mt-5" : ""}`}
         placeholder={placeholder}
         onChange={(e) => setInput(e.target.value)}
       />

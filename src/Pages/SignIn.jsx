@@ -66,7 +66,7 @@ export default function SignIn() {
       <div className={classes.root}>
         <SignInCard>
           <header>
-            <div className="mx-10 mt-12 mb-16 flex justify-center items-center">
+            <div className="mx-10 my-12 flex justify-center items-center">
               <span className="text-4xl font-bold text-green-600 text-center">
                 Welcome to Phonebook!
               </span>
