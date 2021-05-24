@@ -4,7 +4,7 @@ import { Redirect, Route } from "react-router-dom";
 // Utils
 import axios from "axios";
 import PropTypes from "prop-types";
-import { refreshToken } from "Routes/auth";
+import { refreshToken } from "Apis/auth";
 
 export default function PrivateRote({ component: Component, ...rest }) {
   const token = sessionStorage.getItem("token");
