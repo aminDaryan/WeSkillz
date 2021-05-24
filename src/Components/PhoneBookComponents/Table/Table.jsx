@@ -10,10 +10,17 @@ import EditIcon from "@material-ui/icons/Edit";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& > div": {
-      [theme.breakpoints.down("sm")]: {
+    "& > table": {
+      [theme.breakpoints.down("lg")]: {
         width: "100%",
         height: "100%",
+      },
+    },
+    "& > div": {
+      [theme.breakpoints.down("lg")]: {
+        borderLeft: "none",
+        borderRight: "none",
+        borderRadius: "none",
       },
     },
   },
@@ -24,6 +31,7 @@ const TableCard = styled(Card)({
   border: "2px solid rgba(224, 224, 224, 0.5)",
   boxShadow: "none",
   padding: "4rem 2rem",
+  overflow: "auto",
 });
 
 export default function Table() {
@@ -70,7 +78,7 @@ export default function Table() {
                   <td className="text-left text-green-600 py-3 pl-5">
                     <span>John@gmail.com</span>
                   </td>
-                  <td className="text-green-600 py-3 ml-5 text-right  rounded-r-md rounded-b-md">
+                  <td className="flex text-green-600 py-3 ml-5 text-right  rounded-r-md rounded-b-md">
                     <button className="bg-transparent mr-4">
                       <EditIcon
                         style={{

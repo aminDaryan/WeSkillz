@@ -16,8 +16,8 @@ export default function PhoneBook() {
 
   return (
     <>
-      <div className="p-16 flex">
-        <div className="flex flex-col items-center w-1/5 mr-10">
+      <div className="lg:p-16 flex flex-col lg:flex-row">
+        <div className="flex flex-col items-center w-full lg:w-1/5 lg:mr-10 p-5 lg:p-0">
           <div className="w-full">
             <GreenButton
               onClickFunction={() => setModalIsOpen(true)}
@@ -28,7 +28,7 @@ export default function PhoneBook() {
             <span className="text-green-600 text-xl font-bold">Contacts</span>
           </div>
         </div>
-        <div className="w-4/5">
+        <div className=" w-full lg:w-4/5">
           <Table />
         </div>
       </div>

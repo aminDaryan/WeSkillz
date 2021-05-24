@@ -73,32 +73,28 @@ export default function CreateModal({ handleCloseModal, modalIsOpen }) {
       <div className="relative w-full h-full">
         <div className={classes.root}>
           <ModalCard>
-            <div className="flex justify-center items-center mx-14 mt-16 text-xl">
-              <Input
-                className="mr-5"
-                placeholder="Enter First Name"
-                setInput={setFirstName}
-              />
-              <Input placeholder="Enter Last Name" setInput={setLastName} />
-            </div>
-            <div className="flex flex-col justify-center items-center mx-14  text-xl">
-              <Input
-                placeholder="Enter Phone Number"
-                setInput={setPhoneNumber}
-              />
-              <Input placeholder="Enter Address" setInput={setAddress} />
-            </div>
-            <div className="flex justify-center items-center mt-2 mb-5 mx-14">
-              <GreenButton
-                onClickFunction={handleCreateContact}
-                text={isLoading ? "Loading..." : "Create"}
-              />
-            </div>
-            <div className="flex justify-center items-center mt-2 mb-16 mx-14">
-              <GrayButton
-                onClickFunction={handleCloseModal}
-                text="Cancel"
-              />
+            <div className="mx-8 md:mx-14">
+              <div className="flex justify-center items-center mt-16 text-xl">
+                <Input
+                  className="mr-5"
+                  placeholder="First Name"
+                  setInput={setFirstName}
+                />
+                <Input placeholder="Last Name" setInput={setLastName} />
+              </div>
+              <div className="flex flex-col justify-center items-center  text-xl">
+                <Input placeholder="Phone Number" setInput={setPhoneNumber} />
+                <Input placeholder="Address" setInput={setAddress} />
+              </div>
+              <div className="flex justify-center items-center mt-2 mb-5">
+                <GreenButton
+                  onClickFunction={handleCreateContact}
+                  text={isLoading ? "Loading..." : "Create"}
+                />
+              </div>
+              <div className="flex justify-center items-center mt-2 mb-16">
+                <GrayButton onClickFunction={handleCloseModal} text="Cancel" />
+              </div>
             </div>
           </ModalCard>
         </div>

@@ -14,7 +14,7 @@ import Input from "Components/Input";
 import GreenButton from "Components/GreenButton";
 
 // Apis
-import { login } from "Routes/login";
+import { login } from "Routes/auth";
 
 const useStyles = makeStyles((theme) => ({
   root: {
