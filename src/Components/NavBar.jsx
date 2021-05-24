@@ -17,7 +17,7 @@ export default function NavBar() {
   }
   
   return (
-    <nav className="fixed -inset-x-0 top-0 flex justify-between items-center px-8 sm:px-20 py-6 bg-white shadow-md z-50">
+    <nav className="fixed -inset-x-0 top-0 flex justify-between items-center h-24 px-8 sm:px-20 py-6 bg-white shadow-md z-50">
       <div>
         <span className="text-3xl sm:text-5xl font-bold text-green-600">Phonebook</span>
       </div>
